@@ -1,0 +1,42 @@
+<h1>Technology stack</h1>
+<p>Welcome to the phonebook application, please read below through the tech stack:</p>
+<ul>
+    <li><a href='https://get.asp.net/'>ASP.NET Core 2.0</a> and <a href='https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx'>C#</a> for cross-platform server-side code</li>
+    <li><a href='https://angular.io/'>Angular 4</a> and <a href='http://www.typescriptlang.org/'>TypeScript</a> for client-side code</li>
+    <li><a href='https://webpack.github.io/'>Webpack</a> for building and bundling client-side resources</li>
+    <li><a href='http://getbootstrap.com/'>Bootstrap</a> for layout and styling</li>
+    <li><a href='https://serilog.net/'>Serilog</a> for logging</li>
+    <li><a href='https://github.com/JeremySkinner/FluentValidation'>FluentValiation</a> for server side validation.</li>
+    <li><a href='https://autofac.org/'>Autofac</a> for DI.</li>
+    <li><a href='http://www.litedb.org/'>LiteDB</a> for data storage.</li>
+</ul>
+<h4>Pre-requisites</h4>
+<ul>
+    <li>
+        The solution is built using VS2017 15.3 version and you will need similar version or higher to run as .net core 2 was officially released with this version.
+    </li>
+    <li>Please also make sure that nuget and npm packages are restored successfully when running, no additional actions needed. I removed node_modules so the file doesn't get big.</li>
+    <li>
+        The project directories are self explanatory like: DB, logs...
+    </li>
+    <li>
+        The DB will be created automatically and no additional config needed.
+    </li>
+    <li>
+        The solution has a docker image and docker project included, you will need Docker for windows (https://docs.docker.com/docker-for-windows/install/) to run it. But if the docker project failed to load you are able to run the web project.
+    </li>
+</ul>
+<h4>Functional details</h4>
+<ul>
+    <li>Each contact in the phonebook has a name and a list of phone number/s entries.</li>
+    <li>If you submit a contact that already exists, it will add a new entry to his list i.e update, otherwise it will create new contact and entry.</li>
+    <li>If entry already exists for the contact, a 409 error will be raised and user will be notified.</li>
+    <li>The search works only on the contact name.</li>
+    <li>Click on the contact name to view its list of entries.</li>
+</ul>
+<h4>Enhancements that can be done (time limitation prevented developing these features)</h4>
+<ul>
+    <li>Server side pagination on the contacts list.</li>
+    <li>Search by phone number.</li>
+    <li>Unit testing.</li>
+</ul>

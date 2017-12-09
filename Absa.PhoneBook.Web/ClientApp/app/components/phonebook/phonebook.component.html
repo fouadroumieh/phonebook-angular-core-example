@@ -1,0 +1,91 @@
+<h1>Phonebook</h1>
+
+<div class="row">
+    <form name="phoneBookfrm" #phoneBookfrm="ngForm" (ngSubmit)="saveContact(newContact)">
+        <div class="form-group required col-xs-3">
+            <label for="name" class="control-label">Name</label>
+            <input class="form-control" type="text"
+                   id="name"
+                   name="name"
+                   #name="ngModel"
+                   required minlength="4"
+                   [(ngModel)]="newContact.name"
+                   placeholder="Name" />
+            <div *ngIf="name.invalid && (name.dirty || name.touched)"
+                 class="alert alert-danger">
+                <div *ngIf="name.errors.required">
+                    Name is required.
+                </div>
+                <div *ngIf="name.errors.minlength">
+                    Name must be at least 4 characters long.
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group required col-xs-3">
+            <label for="entrytype" class="control-label">Type</label>
+            <select class="form-control"
+                    [(ngModel)]="newContact.entryType"
+                    id="entrytype"
+                    required
+                    #entrytype="ngModel"
+                    name="entrytype">
+                <option *ngFor="let e of entryTypes" [value]="e">{{e}}</option>
+            </select>
+            <div *ngIf="entrytype.invalid && (entrytype.dirty || entrytype.touched)"
+                 class="alert alert-danger">
+                <div *ngIf="entrytype.errors.required">
+                    Type is required.
+                </div>
+            </div>
+        </div>
+        <div class="form-group required col-xs-3">
+            <label for="name" class="control-label">Number</label>
+            <input class="form-control" type="text"
+                   id="number"
+                   name="number"
+                   #number="ngModel"
+                   required minlength="10"
+                   [(ngModel)]="newContact.number" placeholder="Number" />
+            <div *ngIf="number.invalid && (number.dirty || number.touched)"
+                 class="alert alert-danger">
+                <div *ngIf="number.errors.required">
+                    Number is required.
+                </div>
+                <div *ngIf="number.errors.minlength">
+                    Number must be at least 10 characters long.
+                </div>
+            </div>
+        </div>
+        <div class="form-group col-xs-3">
+            <br/>
+            <button type="submit" class="btn btn-primary">
+                Create
+            </button>
+            <button type="button" class="btn btn-warning" (click)="cancelContact()">
+                Cancel
+            </button>
+        </div>
+        <div class="form-group  col-sm-6">
+            <angular4-notify-notifications-container></angular4-notify-notifications-container>
+        </div>
+    </form>
+</div>
+
+<hr class="divider">
+<div class="row">
+    <p *ngIf="!phonebook"><em>Loading...</em></p>
+    <div class="form-group col-xs-3">
+        <form class="form-inline">
+            <label class="control-label">Search</label>
+            <input type="text" name="searchname" [(ngModel)]="searchname" class="form-control" placeholder="Search" ng-model-options="{ updateOn: 'blur' }">
+        </form>
+    </div>
+</div>
+<div class="col-sm-8 row">
+    <accordion close-others="true" *ngIf="phonebook" id="accordion">
+        <accordion-group heading="{{item.name}}" *ngFor="let item of (phonebook | searchfilter : 'name' : searchname)">
+            <div *ngFor="let entry of item.entries">{{entry.entryType}} - {{entry.phoneNumber}}</div>
+        </accordion-group>
+    </accordion>
+</div>

@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  phonebook.web:
+    image: phonebook.web
+    build:
+      context: ./PhoneBook.Web
+      dockerfile: Dockerfile
