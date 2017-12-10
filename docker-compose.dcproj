@@ -6,7 +6,7 @@
     <ProjectGuid>158f77a6-4f05-4c3a-80ce-396fa79f3c74</ProjectGuid>
     <DockerLaunchBrowser>True</DockerLaunchBrowser>
     <DockerServiceUrl>http://localhost:{ServicePort}/api/values</DockerServiceUrl>
-    <DockerServiceName>absa.phonebook.api</DockerServiceName>
+    <DockerServiceName>phonebook.api</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>
     <None Include="docker-compose.ci.build.yml" />

@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{03ED6B4B-661
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "web", "web", "{3B4DCF9F-302D-4718-9515-5D4FB0290A9F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhoneBook.Web", "Absa.PhoneBook.Web\PhoneBook.Web.csproj", "{C70D5AAA-6548-46B4-867F-B40770AA1682}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhoneBook.Web", "PhoneBook.Web\PhoneBook.Web.csproj", "{C70D5AAA-6548-46B4-867F-B40770AA1682}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
