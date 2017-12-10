@@ -1,13 +1,12 @@
 # phonebook-angular-core-example
-Phonebook angular 4 and .net core 2.0 example
-ASP.NET Core 2.0 and C# for cross-platform server-side code
-Angular 4 and TypeScript for client-side code
-Webpack for building and bundling client-side resources
-Bootstrap for layout and styling
-Serilog for logging
-FluentValiation for server side validation.
-Autofac for DI.
-LiteDB for data storage.
+* ASP.NET Core 2.0 and C# for cross-platform server-side code
+* Angular 4 and TypeScript for client-side code
+* Webpack for building and bundling client-side resources
+* Bootstrap for layout and styling
+* Serilog for logging
+* FluentValiation for server side validation.
+* Autofac for DI.
+* LiteDB for data storage.
 
 # Prerequisites
 
